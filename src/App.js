@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.css';  // Pastikan ada file CSS jika dibutuhkan
 
 function App() {
+  const [showText, setShowText] = useState(false);
+
+  const handleClick = () => {
+    setShowText(true);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={handleClick}>Click Me</button>
+      {showText && <p>Hello World</p>}
     </div>
   );
 }
